@@ -1,0 +1,115 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="en"><head>
+<!-- revision
+Rev.L: Worker + Base64
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pretty 8080 Assembler</title>
+<script type="text/javascript" src="encodings.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="makewav.js"></script>
+<script type="text/javascript" src="tape.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<link href="list-online.css" rel="stylesheet" type="text/css" media="screen">
+<!-- styleSheets[1] -->
+<style type="text/css">
+.rga { color: blue; }
+.rgb { color: blue; }
+.rgc { color: blue; }
+.rgd { color: blue; }
+.rge { color: blue; }
+.rgh { color: blue; }
+.rgl { color: blue; }
+.rgm { color: blue; }
+.rgsp { color: blue; }
+.rpb { color: blue; }
+.rpd { color: blue; }
+.rph { color: blue; }
+.rpsp { color: blue; }
+</style>
+
+</head>
+<body id="main" onload="loaded(); return false;">
+
+<div id="toolbar" onclick="scrollBack(); return false;" onmouseover="magicToolbar(0); return false;" onmouseout="magicToolbar(2); return false;">
+◀
+</div>
+
+<div id="header" onmouseover="magicToolbar(0); return false;" onmouseout="magicToolbar(2); return false;">Pretty 8080 Assembler</div>
+<div id="textinput">
+<div id="emulator">
+<div id="emulator-vert">
+<div id="emulator-box">
+<div id="emulator-controls">
+<span id="ruslat">•</span>
+<span id="close">×</span>
+</div>
+<div id="emulator-container"></div>
+</div>
+</div>
+</div>
+
+<div id="list" style="height: 1101px;"><pre id="l0"><span class="adr"></span>	                        <span class="cmt">; 🐟  (try me)</span></pre><pre id="l1"><span class="adr"></span>	                        <span class="cmt">; 8080 assembler code</span></pre><pre id="l2"><span class="adr"></span>	                        <span id="code2" onmouseover="return mouseover(2);" onmouseout="return mouseout(2);">.hexfile test.hex</span></pre><pre id="l3"><span class="adr"></span>	                        <span id="code3" onmouseover="return mouseover(3);" onmouseout="return mouseout(3);">.binfile test.com</span></pre><pre id="l4"><span class="adr"></span>	                        <span class="cmt">; try "hex" for downloading in hex format</span></pre><pre id="l5"><span class="adr"></span>	                        <span id="code5" onmouseover="return mouseover(5);" onmouseout="return mouseout(5);">.download bin  </span></pre><pre id="l6"><span class="adr"></span>	                        <span class="cmt">; target for generated loadable wav-file:</span></pre><pre id="l7"><span class="adr"></span>	                        <span class="cmt">;   rk-bin          Радио-86РК </span></pre><pre id="l8"><span class="adr"></span>	                        <span class="cmt">;   microsha-bin    Микроша</span></pre><pre id="l9"><span class="adr"></span>	                        <span class="cmt">;   v06c-rom        Вектор-06ц ROM</span></pre><pre id="l10"><span class="adr"></span>	                        <span id="code10" onmouseover="return mouseover(10);" onmouseout="return mouseout(10);">.tape v06c-rom </span></pre><pre id="l11"><span class="adr"></span>	                        <span id="code11" onmouseover="return mouseover(11);" onmouseout="return mouseout(11);">.objcopy gobjcopy</span></pre><pre id="l12"><span class="adr"></span>	                        <span id="code12" onmouseover="return mouseover(12);" onmouseout="return mouseout(12);">.postbuild echo "Hooray!"</span></pre><pre id="l13"><span class="adr"></span>	                        <span class="cmt">;.nodump</span></pre><pre id="l14"><span class="adr"></span>	                <span class="l" id="label14" onmouseover="return mouseovel(14);" onmouseout="return mouseout(14);">bdos</span>    <span id="code14" onmouseover="return mouseover(14);" onmouseout="return mouseout(14);">equ 5</span></pre><pre id="l15"><span class="adr"></span>	                <span class="l" id="label15" onmouseover="return mouseovel(15);" onmouseout="return mouseout(15);">intv</span>    <span id="code15" onmouseover="return mouseover(15);" onmouseout="return mouseout(15);">equ 38h</span></pre><pre id="l16"><span class="adr"></span>	                        <span id="code16" onmouseover="return mouseover(16);" onmouseout="return mouseout(16);">.org 100h</span></pre><pre id="l17"><span class="adr">0100</span>	C3 7C 01                <span id="code17" onmouseover="return mouseover(17);" onmouseout="return mouseout(17);">jmp begin</span></pre><pre id="l18"><span class="adr">0103</span>	1B                      <span id="code18" onmouseover="return mouseover(18);" onmouseout="return mouseout(18);">db 27</span></pre><pre id="l19"><span class="adr"></span>	                <span class="l" id="label19" onmouseover="return mouseovel(19);" onmouseout="return mouseout(19);">msg</span><span id="code19" onmouseover="return mouseover(19);" onmouseout="return mouseout(19);">:</span></pre><pre id="l20"><span class="adr">0104</span>	41 73 73 65             <span id="code20" onmouseover="return mouseover(20);" onmouseout="return mouseout(20);">db 'Assembled by Pretty 8080 Assembler',0dh,0ah,'$'</span><br>	.&nbsp;.&nbsp;.&nbsp;<br>0128	24 <br></pre><pre id="l21"><span class="adr"></span>	                <span class="l" id="label21" onmouseover="return mouseovel(21);" onmouseout="return mouseout(21);">yeah</span><span id="code21" onmouseover="return mouseover(21);" onmouseout="return mouseout(21);">: 	</span><span class="cmt">; large binary strings can be defined using base64</span></pre><pre id="l22"><span class="adr">0129</span>	4C 6F 6E 67             <span id="code22" onmouseover="return mouseover(22);" onmouseout="return mouseout(22);">db64 TG9uZyBiaW5hcnkgaW5pdGlhbGl6YXRpb24gc2VjdGlvbnMgY2FuIGJlIGRlZmluZWQgdXNpbmcgYmFzZTY0LWVuY29kZWQgc3RyaW5ncyENCiQ=</span><br>	.&nbsp;.&nbsp;.&nbsp;<br>0179	0D 0A 24 <br></pre><pre id="l23"><span class="adr"></span>	                <span class="l" id="label23" onmouseover="return mouseovel(23);" onmouseout="return mouseout(23);">begin</span><span id="code23" onmouseover="return mouseover(23);" onmouseout="return mouseout(23);">:</span></pre><pre id="l24"><span class="adr">017C</span>	11 04 01                <span id="code24" onmouseover="return mouseover(24);" onmouseout="return mouseout(24);"><span onmouseover="return rgmouseover(['rge']);" onmouseout="return rgmouseout(['rge']);">lxi</span> <span class="rgd" onmouseover="return rgmouseover('rgd');" onmouseout="return rgmouseout('rgd');">d</span>, msg</span></pre><pre id="l25"><span class="adr">017F</span>	0E 09                   <span id="code25" onmouseover="return mouseover(25);" onmouseout="return mouseout(25);">mvi <span class="rgc" onmouseover="return rgmouseover('rgc');" onmouseout="return rgmouseout('rgc');">c</span>, 9</span></pre><pre id="l26"><span class="adr">0181</span>	CD 05 00                <span id="code26" onmouseover="return mouseover(26);" onmouseout="return mouseout(26);">call bdos</span></pre><pre id="l27"><span class="adr">0184</span>	CD 90 01                <span id="code27" onmouseover="return mouseover(27);" onmouseout="return mouseout(27);">call delay</span></pre><pre id="l28"><span class="adr">0187</span>	0E 09                   <span id="code28" onmouseover="return mouseover(28);" onmouseout="return mouseout(28);">mvi <span class="rgc" onmouseover="return rgmouseover('rgc');" onmouseout="return rgmouseout('rgc');">c</span>, 9</span></pre><pre id="l29"><span class="adr">0189</span>	11 29 01                <span id="code29" onmouseover="return mouseover(29);" onmouseout="return mouseout(29);"><span onmouseover="return rgmouseover(['rge']);" onmouseout="return rgmouseout(['rge']);">lxi</span> <span class="rgd" onmouseover="return rgmouseover('rgd');" onmouseout="return rgmouseout('rgd');">d</span>, yeah</span></pre><pre id="l30"><span class="adr">018C</span>	CD 05 00                <span id="code30" onmouseover="return mouseover(30);" onmouseout="return mouseout(30);">call bdos</span></pre><pre id="l31"><span class="adr">018F</span>	C9                      <span id="code31" onmouseover="return mouseover(31);" onmouseout="return mouseout(31);">ret</span></pre><pre id="l32"><span class="adr"></span>	                </pre><pre id="l33"><span class="adr"></span>	                <span class="l" id="label33" onmouseover="return mouseovel(33);" onmouseout="return mouseout(33);">delay</span><span id="code33" onmouseover="return mouseover(33);" onmouseout="return mouseout(33);">:</span></pre><pre id="l34"><span class="adr">0190</span>	3E 21                   <span id="code34" onmouseover="return mouseover(34);" onmouseout="return mouseout(34);">mvi <span class="rga" onmouseover="return rgmouseover('rga');" onmouseout="return rgmouseout('rga');">a</span>, 33</span></pre><pre id="l35"><span class="adr">0192</span>	76                      <span id="code35" onmouseover="return mouseover(35);" onmouseout="return mouseout(35);">hlt</span></pre><pre id="l36"><span class="adr">0193</span>	3D                      <span id="code36" onmouseover="return mouseover(36);" onmouseout="return mouseout(36);">dcr <span class="rga" onmouseover="return rgmouseover('rga');" onmouseout="return rgmouseout('rga');">a</span></span></pre><pre id="l37"><span class="adr">0194</span>	C2 92 01                <span id="code37" onmouseover="return mouseover(37);" onmouseout="return mouseout(37);">jnz .-2</span></pre><pre id="l38"><span class="adr">0197</span>	C9                      <span id="code38" onmouseover="return mouseover(38);" onmouseout="return mouseout(38);">ret</span></pre><pre id="l39"><span class="adr"></span>	                </pre><pre>Labels:</pre><div class="hordiv"></div><pre class="labeltable"><span class="t1" onclick="return gotoLabel('bdos');">bdos                    0005</span><span class="t1" onclick="return gotoLabel('begin');">begin                   017C</span><span class="t1" onclick="return gotoLabel('delay');">delay                   0190</span><span class="t2" onclick="return gotoLabel('intv');">intv                    0038</span><br><span class="t1" onclick="return gotoLabel('msg');">msg                     0104</span><span class="t1" onclick="return gotoLabel('yeah');">yeah                    0129</span></pre><div>&nbsp;</div><pre>Memory dump:</pre><div class="hordiv"></div><pre class="d0">0100:  C3 7C 01 1B 41 73 73 65-6D 62 6C 65 64 20 62 79  .|..Assembled.by</pre><br><pre class="d1">0110:  20 50 72 65 74 74 79 20-38 30 38 30 20 41 73 73  .Pretty.8080.Ass</pre><br><pre class="d0">0120:  65 6D 62 6C 65 72 0D 0A-24 4C 6F 6E 67 20 62 69  embler..$Long.bi</pre><br><pre class="d1">0130:  6E 61 72 79 20 69 6E 69-74 69 61 6C 69 7A 61 74  nary.initializat</pre><br><pre class="d0">0140:  69 6F 6E 20 73 65 63 74-69 6F 6E 73 20 63 61 6E  ion.sections.can</pre><br><pre class="d1">0150:  20 62 65 20 64 65 66 69-6E 65 64 20 75 73 69 6E  .be.defined.usin</pre><br><pre class="d0">0160:  67 20 62 61 73 65 36 34-2D 65 6E 63 6F 64 65 64  g.base64-encoded</pre><br><pre class="d1">0170:  20 73 74 72 69 6E 67 73-21 0D 0A 24 11 04 01 0E  .strings!..$....</pre><br><pre class="d0">0180:  09 CD 05 00 CD 90 01 0E-09 11 29 01 CD 05 00 C9  ..........).....</pre><br><pre class="d1">0190:  3E 21 76 3D C2 92 01 C9-                         &gt;!v=............</pre><br><div>&nbsp;</div><pre>Intel HEX:</pre><div class="hordiv"></div><pre>cat &gt;test.hex &lt;&lt;X<br>:20010000C37C011B417373656D626C6564206279205072657474792038303830204173731A<br>:20012000656D626C65720D0A244C6F6E672062696E61727920696E697469616C697A617416<br>:20014000696F6E2073656374696F6E732063616E20626520646566696E6564207573696ECA<br>:2001600067206261736536342D656E636F64656420737472696E6773210D0A241104010E4A<br>:1801800009CD0500CD90010E09112901CD0500C93E21763DC29201C911<br>:00000001FF<br>X<br>gobjcopy -I ihex test.hex -O binary test.com<br>echo "Hooray!"<br></pre><div>&nbsp;</div></div>
+<div id="ta">
+<textarea id="source" rows="30" cols="80" onkeydown="return keydown(event);" onkeypress="keypress(event);return true;" style="height: 1101px;">        ; 🐟  (try me)
+        ; 8080 assembler code
+        .hexfile test.hex
+        .binfile test.com
+        ; try "hex" for downloading in hex format
+        .download bin  
+        ; target for generated loadable wav-file:
+        ;   rk-bin          Радио-86РК 
+        ;   microsha-bin    Микроша
+        ;   v06c-rom        Вектор-06ц ROM
+        .tape v06c-rom 
+        .objcopy gobjcopy
+        .postbuild echo "Hooray!"
+        ;.nodump
+bdos    equ 5
+intv    equ 38h
+        .org 100h
+        jmp begin
+        db 27
+msg:
+        db 'Assembled by Pretty 8080 Assembler',0dh,0ah,'$'
+yeah: 	; large binary strings can be defined using base64
+        db64 TG9uZyBiaW5hcnkgaW5pdGlhbGl6YXRpb24gc2VjdGlvbnMgY2FuIGJlIGRlZmluZWQgdXNpbmcgYmFzZTY0LWVuY29kZWQgc3RyaW5ncyENCiQ=
+begin:
+        lxi d, msg
+        mvi c, 9
+        call bdos
+        call delay
+        mvi c, 9
+        lxi d, yeah
+        call bdos
+        ret
+
+delay:
+        mvi a, 33
+        hlt
+        dcr a
+        jnz .-2
+        ret
+</textarea></div>
+</div>
+<div id="messagepane">
+</div>
+<div style="height:0.5ex"><br></div>
+<div id="buttbr" class="hordiv"></div>
+<div id="buttons-below">
+<input type="text" id="hex" name="hex" style="display:none;" value=":20010000C37C011B417373656D626C6564206279205072657474792038303830204173731A|n:20012000656D626C65720D0A244C6F6E672062696E61727920696E697469616C697A617416|n:20014000696F6E2073656374696F6E732063616E20626520646566696E6564207573696ECA|n:2001600067206261736536342D656E636F64656420737472696E6773210D0A241104010E4A|n:1801800009CD0500CD90010E09112901CD0500C93E21763DC29201C911|n:00000001FF">
+<input type="text" id="formbinname" name="formbinname" style="display:none;" value="test.com">
+<input type="text" id="formhexname" name="formhexname" style="display:none;" value="test.hex">
+<input type="text" id="downloadformat" name="downloadformat" style="display:none;" value="bin">
+<!--<input type="submit" class="baton" id="baton" name="baton" value="Translate"/>-->
+<div class="baton" id="baton">Make Beautiful Code</div>
+<div class="baton" id="run">Run</div>
+<div class="baton" id="sounds">Wav&nbsp;&nbsp;
+    <span id="wav-dl">⬇</span>&nbsp;&nbsp;&nbsp;<span id="wav-play">▶</span></div>
+</div>
+
+
+
+<a class="translate-button" href=""><img class="translate-button-icon" src="24x24.png" style="width: 24px; height: 24px;"></a><div class="translate-overlay-wrapper" tabindex="0"><div class="translate-overlay-container"><div class="translate-overlay-content"></div></div></div></body></html>

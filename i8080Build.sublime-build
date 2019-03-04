@@ -1,0 +1,5 @@
+{
+    "shell_cmd": "i8080Builder \"$file_name\"",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.asm"
+}
